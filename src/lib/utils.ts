@@ -1,8 +1,8 @@
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
-	return twMerge(clsx(inputs));
+  return twMerge(clsx(inputs));
 }
 
 /**
@@ -12,8 +12,8 @@ export function cn(...inputs: ClassValue[]) {
  * @returns The formatted decimal string.
  */
 export const formatNumber = (value: number, isCompact = false): string =>
-	new Intl.NumberFormat("en-NG", {
-		style: "decimal",
-		notation: isCompact ? "compact" : "standard",
-		compactDisplay: isCompact ? "short" : undefined,
-	}).format(value);
+  new Intl.NumberFormat('en-NG', {
+    style: 'decimal',
+    notation: isCompact ? 'compact' : 'standard',
+    compactDisplay: isCompact ? 'short' : undefined,
+  }).format(value);
