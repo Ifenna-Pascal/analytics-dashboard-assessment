@@ -6,7 +6,7 @@ import { MetricsLoader } from '@/app/loaders';
 import { formatNumber } from '@/lib';
 
 export const DashboardMetrics = () => {
-    const {loading, totalBEVs, totalPHEVs, totalEvs, percentageBEVs, percentagePHEVs } = useFetchMetricInformation()
+    const {loading, totalBEVs, totalPHEVs, totalEvs, percentageBEVs, averagePerYear, percentagePHEVs } = useFetchMetricInformation()
     const analytics = useMemo(() => {
         return [
             {
@@ -28,10 +28,10 @@ export const DashboardMetrics = () => {
                 trend: "down",
             },
             {
-                title: "Total Payout",
-                value: 0,
-                change: "-10.5%",
-                trend: "down",
+                title: "Avg. Vehicles per Year",
+                value: formatNumber(averagePerYear),
+                trend: "up",
+
             },
         ];
     }, [totalBEVs]);
