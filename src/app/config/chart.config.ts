@@ -21,12 +21,6 @@ export const LINE_CHART_OPTIONS = {
 			},
 		},
 	},
-	plugins: {
-		legend: {
-			display: true,
-			position: "top",
-		},
-	},
 	scales: {
 		x: {
 			title: {
@@ -103,15 +97,7 @@ export const BAR_CHART_OPTIONS = {
 			},
 		},
 	},
-	plugins: {
-		legend: {
-			display: true,
-			position: "top",
-			labels: {
-			//   usePointStyle: true,
-			},
-		},
-	},
+
 	scales: {
 		x: {
 			title: {
@@ -159,5 +145,6 @@ export const BAR_CHART_OPTIONS = {
 		},
 	},
 };
+
 
 
