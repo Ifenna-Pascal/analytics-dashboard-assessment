@@ -4,6 +4,7 @@ import { ArrowDown, ArrowUp, InfoIcon } from 'lucide-react';
 import React, { useMemo } from 'react'
 import { MetricsLoader } from '@/app/loaders';
 import { formatNumber } from '@/lib';
+import ToolTip from './tooltip';
 
 export const DashboardMetrics = () => {
     const {loading, totalBEVs, totalPHEVs, totalEvs, percentageBEVs, averagePerYear, percentagePHEVs } = useFetchMetricInformation()
@@ -12,26 +13,29 @@ export const DashboardMetrics = () => {
             {
                 title: "Total Electric Vehicles",
                 value: formatNumber(totalEvs),
-                change: "+10.5%",
                 trend: "up",
+                message: 'The total number of Electric Vehicles in the dataset'
             },
             {
                 title: "Total BEVs",
                 value: formatNumber(totalBEVs),
                 change: `${percentageBEVs}%`,
                 trend: "up",
+                message: 'The total number of Battery Electric Vehicles (BEVs)'
+
             },
             {
                 title: "Total PHEVs",
                 value: formatNumber(totalPHEVs),
                 change: `${percentagePHEVs}%`,
                 trend: "down",
+                message: 'The total number of Plug-in Hybrids Electric Vehicles (PHEVs)'
             },
             {
                 title: "Avg. Vehicles per Year",
                 value: formatNumber(averagePerYear),
                 trend: "up",
-
+                message: 'The average number of electric vehicles per year.'
             },
         ];
     }, [totalBEVs]);
@@ -45,8 +49,8 @@ if (loading) return <MetricsLoader />;
 						<div className="space-y-1">
 							<h3 className="font-medium text-[12px]/[26px] text-grey-900">{metric.title}</h3>
 						</div>
-						<InfoIcon className="size-4 text-gray-500 cursor-pointer" />
-					</CardHeader>
+                        <ToolTip message={metric.message} />
+                        </CardHeader>
 					<CardContent className="flex items-end justify-between">
 						<div className="space-y-1">
 							<span className="font-normal text-[18px]/[30px]">{metric.value}</span>

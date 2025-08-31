@@ -21,12 +21,13 @@ export const LINE_CHART_OPTIONS = {
 			},
 		},
 	},
+	plugins: {
+		legend: {
+			display: false,
+		},
+	},
 	scales: {
 		x: {
-			title: {
-				display: true,
-				text: "Year (1998 - 2024)",
-			},
 			ticks: {
 				color: "rgba(139, 144, 154, 1)",
 				padding: 24,
@@ -45,29 +46,23 @@ export const LINE_CHART_OPTIONS = {
 			},
 		},
 		y: {
-			title: {
-			  display: true,
-			  text: "Total No Of Vehicles",
-			},
 			beginAtZero: true,
-			max: 100, 
 			grid: {
-			  display: false,
+				display: false,
 			},
 			border: {
-			  display: false,
+				display: false,
 			},
 			ticks: {
-			  color: "rgba(139, 144, 154, 1)",
-			  padding: 20,
-			  font: {
-				size: 14,
-				family: "inherit",
-			  },
-			  stepSize: 10,
+				color: "rgba(139, 144, 154, 1)",
+				padding: 20,
+				font: {
+					size: 14,
+					family: "inherit",
+				},
+				stepSize: 2,
 			},
-		  },
-		
+		},
 	},
 };
 

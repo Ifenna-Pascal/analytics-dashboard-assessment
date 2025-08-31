@@ -32,7 +32,7 @@ export const EVTrendsPerYear = () => {
         />
           }
         </div>
-        <div className="flex item-center mt-2 space-x-4 justify-center"> 
+        <div className="flex item-center mt-4 space-x-4 justify-center"> 
             <div 
             onClick={() => setChartType('line')}
             className={
