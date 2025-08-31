@@ -16,7 +16,7 @@ export const useFetchTopVehiclesByRange = () => {
            fetchResults()
         }, [])
 
-        const grouped = {};
+        const grouped = {} as Record<string, number[]>;
 data.forEach(car => {
   const make = car.Make;
   const msrp = Number(car["Base MSRP"]);
